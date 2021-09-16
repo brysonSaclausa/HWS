@@ -8,23 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State private var tapCount = 0
-    @State private var name = ""
+    let students = ["Harry", "Hermione", "Ron"]
+    @State private var selectedStudent = ""
     
     var body: some View {
         VStack {
-            Text("Hello, werld!, the count is \(tapCount)")
-                .padding()
-            Button("Tap Count \(tapCount)") {
-                self.tapCount += 1
-            }
-            Form {
-                TextField("Enter Your Name", text: $name) //$ introduces two-way binding, we bind the text field so it shows the value of our property 'name', and also writes it back if any changes are made
-                Text("Your name is: \(name)")
+            
+            Picker("Pick your student", selection: $selectedStudent) {
+                ForEach(0 ..< students.count) {
+                    Text(self.students[$0])
+                }
+                
             }
             
-        }//
+            
+      
+        }
+        
+//        Form {
+////            ForEach(0 ..< 22) { number in
+////                Text("Row \(number)")
+////            }
+                                    //does the same thing bottom is shorthand syntax
+//            ForEach(0 ..< 22) {
+//                Text("Row \($0)")
+//            }
+//        }
         
     }
 }
