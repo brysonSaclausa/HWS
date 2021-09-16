@@ -8,32 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    let students = ["Harry", "Hermione", "Ron"]
-    @State private var selectedStudent = ""
+    @State private var checkAmount = ""
+    @State private var numberOfPeople = 2
+    @State private var tipPercentage = 2
+    
+    let tipPercentages = [10, 15, 20, 25, 0]
+        
+    
     
     var body: some View {
-        VStack {
-            
-            Picker("Pick your student", selection: $selectedStudent) {
-                ForEach(0 ..< students.count) {
-                    Text(self.students[$0])
-                }
-                
+        Form {
+            Text("hello WeSplit")
+            Section {
+                Text("hello WeSplit")
+                TextField("Amount", text: $checkAmount)
+                    .keyboardType(.decimalPad)
             }
-            
-            
-      
+            Section {
+                Text("$ \(checkAmount)")
+            }
         }
-        
-//        Form {
-////            ForEach(0 ..< 22) { number in
-////                Text("Row \(number)")
-////            }
-                                    //does the same thing bottom is shorthand syntax
-//            ForEach(0 ..< 22) {
-//                Text("Row \($0)")
-//            }
-//        }
         
     }
 }
@@ -43,3 +37,14 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+/*
+WeSplit is a check sharing app, where users need to input three pieces of data to use app:
+ 1)enter cost of check 2)how many people are spliting and 3)how much you want to tip/ percentage
+
+ 1. create @State properties to contentview struct
+ 2. 2 way bind checkAmount to textfield text
+ 
+ 
+ */
