@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var tapCount = 0
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Hello, werld!, the count is \(tapCount)")
+                .padding()
+            Button("Tap Count \(tapCount)") {
+                self.tapCount += 1
+            }
+        }
     }
 }
 
