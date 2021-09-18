@@ -30,10 +30,14 @@ struct ContentView: View {
                 print("Edit button was tapped")
             }) {
                 HStack(spacing: 10) {
-                    Image(systemName: "pencil")
+                    Image(systemName: "pencil").renderingMode(.original)
                     Text("Edit")
                 }
+                
             }//example
+            /*
+             Tip: If you find that your images have become filled in with a color, for example showing as solid blue rather than your actual picture, this is probably SwiftUI coloring them to show that they are tappable. To fix the problem, use the renderingMode(.original) modifier to force SwiftUI to show the original image rather than the recolored version.
+             */
 
             
         }
