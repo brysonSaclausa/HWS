@@ -9,23 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
-            HStack {
-                Text("Hello, werld!")
-                Text("Hello, werld!")
-                Text("Hello, werld!")
-            }
-            HStack {
-                Text("Hello, werld!")
-                Text("Hello, werld!")
-                Text("Hello, werld!")
-            }
-            HStack {
-                Text("Hello, werld!")
-                Text("Hello, werld!")
-                Text("Hello, werld!")
-            }
-            Spacer()
+        ZStack {
+//            Color.red.frame(width: 200, height: 200, alignment: .center)
+//            Color(red: 1, green: 0.8, blue: 0)
+            Color.red.ignoresSafeArea(.all)
+            Text("Your content")
+            
         }
     }
 }
